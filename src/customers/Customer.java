@@ -1,11 +1,11 @@
-package clients;
+package customers;
 
 import java.util.HashMap;
 
 import accounts.Account;
 
 
-public class Client 
+public abstract class Customer 
 {
 	private String _id;
 	private String _firstName;
