@@ -8,17 +8,23 @@ import enums.AccountType;
 public class BusinessAccount extends Account 
 {
 
-	public BusinessAccount(String _number,
+	public BusinessAccount(String _accountName, String _accountNumber, 
 			HashMap<String, Customer> _myCustomers, AccountType _accountType,
 			int _accountBalance, int _accountCredit, int _maxAllowedWithdrawal) 
 	{
-		super(_number, _myCustomers, _accountType, _accountBalance, _accountCredit,
+		super(_accountName, _accountNumber, _myCustomers, _accountType, _accountBalance, _accountCredit,
 				_maxAllowedWithdrawal);
 	}
 
 	@Override
 	public void printMe() {
 		
+	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

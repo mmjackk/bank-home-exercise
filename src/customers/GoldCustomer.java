@@ -16,8 +16,15 @@ public class GoldCustomer extends Customer
 	}
 
 	@Override
-	public void printMe() {
+	public void printMe() 
+	{
 		
+	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

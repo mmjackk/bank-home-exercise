@@ -2,44 +2,60 @@ package accounts;
 
 import interfaces.Printable;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 import customers.Customer;
 import enums.AccountType;
 
-public abstract class Account implements Printable
+public abstract class Account implements Printable, Comparable, Serializable
 {
-	private String _number;
+	private String _accountName;
+	private String _accountNumber;
 	private HashMap<String , Customer> _myCustomers;
 	private AccountType _accountType;
 	private int _accountBalance;
 	private int _accountCredit;
 	private int _maxAllowedWithdrawal;
+	private static int _bonus;
 	
 	
-	public Account(String _number, HashMap<String, Customer> _myCustomers,
+	public Account(String accountName, String _number, HashMap<String, Customer> _myCustomers,
 			AccountType _accountType, int _accountBalance, int _accountCredit,
 			int _maxAllowedWithdrawal) 
 	{
 		super();
-		this._number = _number;
+		this._accountName = accountName; 
+		this._accountNumber = _number;
 		this._myCustomers = _myCustomers;
 		this._accountType = _accountType;
 		this._accountBalance = _accountBalance;
 		this._accountCredit = _accountCredit;
 		this._maxAllowedWithdrawal = _maxAllowedWithdrawal;
 	}
+	
 
-
-	public String get_number() 
+	public String get_accountName() 
 	{
-		return _number;
+		return _accountName;
 	}
 
 
-	public void set_number(String _number) 
+	public void set_accountName(String _accountName) 
 	{
-		this._number = _number;
+		this._accountName = _accountName;
+	}
+
+
+	public String get_accountNumber() 
+	{
+		return _accountNumber;
+	}
+
+
+	public void set_accountNumber(String _number) 
+	{
+		this._accountNumber = _number;
 	}
 
 
@@ -101,6 +117,22 @@ public abstract class Account implements Printable
 	{
 		this._maxAllowedWithdrawal = _maxAllowedWithdrawal;
 	}
+
+
+	public static int getBonus() 
+	{
+		return _bonus;
+	}
+
 	
+	public void printMe()
+	{
+		System.out.println("Account name : " +get_accountName() + "\n"
+				+ "Account number : " + get_accountNumber() + "\n"
+				+ "Account Type : " + get_accountType()
+				+ "Account balance : " + get_accountBalance() + "\n"
+				+ "Account credit : " + get_accountCredit() + "\n"
+				+ "Maximum allowed withdrawal : " + get_maxAllowedWithdrawal() + "\n");
+	}
 	
 }

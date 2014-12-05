@@ -2,12 +2,13 @@ package customers;
 
 import interfaces.Printable;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 import accounts.Account;
 import enums.CustomerType;
 
-public abstract class Customer implements Printable
+public abstract class Customer implements Printable, Comparable, Serializable
 {
 	private String _id;
 	private String _firstName;
@@ -30,7 +31,8 @@ public abstract class Customer implements Printable
 		this._myAccounts = _myAccounts;
 		this._customerType = _customerType;
 	}
-
+	
+	
 	public String get_id() 
 	{
 		return _id;
@@ -99,5 +101,14 @@ public abstract class Customer implements Printable
 	public void set_customerType(CustomerType _customerType) 
 	{
 		this._customerType = _customerType;
+	}
+	
+	public void printMe()
+	{
+		System.out.println("Customer name : " +get_firstName() + " " + get_lastName() + "\n"
+				+ "ID number : " + get_id() + "\n"
+				+ "Customer Type : " + get_customerType()
+				+ "Adress : " + get_adress() + "\n"
+				+ "Phone numbr : " + get_phone() + "\n");
 	}
 }

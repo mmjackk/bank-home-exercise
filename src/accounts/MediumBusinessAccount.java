@@ -8,11 +8,11 @@ import enums.AccountType;
 public class MediumBusinessAccount extends BusinessAccount
 {
 
-	public MediumBusinessAccount(String _number,
+	public MediumBusinessAccount(String _accountName, String _accountNumber,
 			HashMap<String, Customer> _myCustomers, AccountType _accountType,
 			int _accountBalance, int _accountCredit, int _maxAllowedWithdrawal) 
 	{
-		super(_number, _myCustomers, _accountType, _accountBalance, _accountCredit,
+		super(_accountName, _accountNumber, _myCustomers, _accountType, _accountBalance, _accountCredit,
 				_maxAllowedWithdrawal);
 	}
 
